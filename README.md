@@ -11,8 +11,6 @@
 - ### Cars - 한 경기에 출전하는 자동차 전부를 처리
     - 필드
       - List<Car> cars
-    - 메서드
-      - List<Car> getWinner() -> 우승자 반환
 - ### RaceController - 경기 진행 및 통제
     - 필드
       - Cars cars
@@ -20,7 +18,11 @@
     - 메서드
       - void playRace() -> 레이스 진행
 - ### RaceResult - 경기 결과 관리
-    - 
+    - 필드
+      - Cars winner
+    - 생성자
+      - public RaceResult(Cars cars)
+        - 생성자에서 cars객체를 입력받아 우승자를 판별 후 this.winner에 우승자 저장
     
 
 ## Utility 클래스

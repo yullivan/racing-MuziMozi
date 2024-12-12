@@ -17,7 +17,8 @@ public class CarsTest {
         cars.getCar().get(0).move(3);
         cars.getCar().get(1).move(1);
         cars.getCar().get(2).move(2);
-        assertThat(cars.getWinner()).isEqualTo(List.of(cars.getCar().get(0)));
+        RaceResult raceResult = new RaceResult(cars);
+        assertThat(raceResult.getWinner()).isEqualTo(new Cars(List.of(cars.getCar().get(0))));
     }
 
     @Test
@@ -30,7 +31,8 @@ public class CarsTest {
         cars.getCar().get(0).move(3);
         cars.getCar().get(1).move(5);
         cars.getCar().get(2).move(2);
-        assertThat(cars.getWinner()).isEqualTo(List.of(cars.getCar().get(0), cars.getCar().get(1)));
+        RaceResult raceResult = new RaceResult(cars);
+        assertThat(raceResult.getWinner()).isEqualTo(new Cars(List.of(cars.getCar().get(0), cars.getCar().get(1))));
     }
 
     @Test
@@ -43,6 +45,7 @@ public class CarsTest {
         cars.getCar().get(0).move(1);
         cars.getCar().get(1).move(1);
         cars.getCar().get(2).move(2);
-        assertThat(cars.getWinner()).isEqualTo(List.of(cars.getCar().get(0), cars.getCar().get(1), cars.getCar().get(2)));
+        RaceResult raceResult = new RaceResult(cars);
+        assertThat(raceResult.getWinner()).isEqualTo(new Cars(List.of(cars.getCar().get(0), cars.getCar().get(1), cars.getCar().get(2))));
     }
 }

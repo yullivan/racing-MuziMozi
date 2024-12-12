@@ -15,23 +15,6 @@ public class Cars {
         return cars;
     }
 
-    public List<Car> getWinner() {
-        List<Car> winners = new ArrayList<>();
-        Car winner = new Car();
-        for (Car car : this.cars) {
-            if (winner.getPosition() < car.getPosition()) {
-                winner = car;
-            }
-        }
-
-        for (Car car : this.cars) {
-            if (winner.isDuplicateWinner(car)){
-                winners.add(car);
-            }
-        }
-        return winners;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
