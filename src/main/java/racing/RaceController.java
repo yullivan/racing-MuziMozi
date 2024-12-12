@@ -24,11 +24,15 @@ public class RaceController {
     }
 
     public void playRace() {
+        int round = 1;
         while (rounds-- != 0) {
+            OutputHandler.printRaceRound(round);
             for (Car car : this.cars.getCar()) {
                 car.move(RandomGenerator.generateRandomNumber());
             }
             OutputHandler.printCarsState(cars);
+            System.out.println();
+            round++;
         }
     }
 }
