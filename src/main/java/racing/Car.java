@@ -55,9 +55,6 @@ public class Car {
 
     @Override
     public String toString() {
-        return "Car{" +
-                "carName='" + carName + '\'' +
-                ", position=" + position +
-                '}';
+        return carName + " \uD83C\uDFCE\uFE0F" + "-".repeat(position);
     }
 }

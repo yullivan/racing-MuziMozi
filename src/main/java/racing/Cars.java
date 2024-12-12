@@ -47,8 +47,6 @@ public class Cars {
 
     @Override
     public String toString() {
-        return "Cars{" +
-                "cars=" + cars +
-                '}';
+        return cars + "";
     }
 }
