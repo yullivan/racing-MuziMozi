@@ -20,13 +20,12 @@ public class Cars {
         return randomNumber != 1 && randomNumber != 2;
     }
 
-    public List<Car> moveCars() {
+    public void moveCars() {
         for (Car car : this.cars) {
             if (isMove()) {
                 car.move();
             }
         }
-        return this.cars;
     }
 
     public List<Car> getWinner() {
