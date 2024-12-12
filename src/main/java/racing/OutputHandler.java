@@ -12,8 +12,8 @@ public class OutputHandler {
         }
     }
 
-    public static void printWinners(Cars cars) {
-        for (Car car : cars.getWinner()) {
+    public static void printWinners(RaceResult raceResult) {
+        for (Car car : raceResult.getWinner().getCar()) {
             System.out.println("\uD83C\uDFC6우승자는 " + car.getCarName() + "!");
         }
     }
