@@ -26,8 +26,14 @@ public class Car {
         return position;
     }
 
-    public void move() {
-        this.position++;
+    private boolean isMove(int randomNumber) {
+        return randomNumber != 1 && randomNumber != 2;
+    }
+
+    public void move(int randomNumber) {
+        if (isMove(randomNumber)) {
+            this.position++;
+        }
     }
 
     public boolean isDuplicateWinner(Car other) {

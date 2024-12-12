@@ -1,16 +1,24 @@
 package racing;
 
 public class RaceController {
-    Cars cars;
-    int round;
+    private Cars cars;
+    private int round;
 
     public RaceController(Cars cars, int round) {
         this.cars = cars;
         this.round = round;
     }
 
+    public Cars getCars() {
+        return cars;
+    }
+
+    public int getRound() {
+        return round;
+    }
+
     private boolean isPossibleToStart() {
-        return this.cars.getCars().size() > 1;
+        return this.cars.getCar().size() > 1;
     }
 
     public void playRace() {
@@ -19,10 +27,10 @@ public class RaceController {
                 OutputHandler.printCannotStartGame();
                 break;
             }
-            for (int i = 0; i < round; i++) {
-                cars.moveCars();
-                OutputHandler.printCarsState(cars);
+            for (Car car : this.cars.getCar()) {
+                car.move(RandomGenerator.generateRandomNumber());
             }
+            OutputHandler.printCarsState(cars);
         }
     }
 }

@@ -13,6 +13,6 @@ public class RaceControllerTest {
         Cars cars = new Cars(List.of(c1, c2, c3));
         RaceController raceController = new RaceController(cars, 5);
         raceController.playRace();
-        System.out.println(raceController.cars.getWinner());
+        System.out.println(raceController.getCars().getWinner());
     }
 }

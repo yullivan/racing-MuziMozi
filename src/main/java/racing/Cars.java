@@ -11,21 +11,8 @@ public class Cars {
         this.cars = cars;
     }
 
-    public List<Car> getCars() {
+    public List<Car> getCar() {
         return cars;
-    }
-
-    private boolean isMove() {
-        int randomNumber = RandomGenerator.generateRandomNumber();
-        return randomNumber != 1 && randomNumber != 2;
-    }
-
-    public void moveCars() {
-        for (Car car : this.cars) {
-            if (isMove()) {
-                car.move();
-            }
-        }
     }
 
     public List<Car> getWinner() {
