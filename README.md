@@ -18,7 +18,6 @@
       - Cars cars
       - int round -> 진행 횟수
     - 메서드
-      - boolean isPossibleToStart() -> 레이스를 진행하기 위해 자동차가 2대 이상 있는지 판별
       - void playRace() -> 레이스 진행
 - ### RaceResult - 경기 결과 관리
     - 

@@ -2,31 +2,29 @@ package racing;
 
 public class RaceController {
     private Cars cars;
-    private int round;
+    private int rounds;
 
-    public RaceController(Cars cars, int round) {
+    public RaceController(Cars cars, int rounds) {
+        if (cars.getCar().size() < 2) {
+            throw new IllegalArgumentException("[ERROR] 레이스를 진행하려면 최소 2대 이상의 자동차가 필요합니다!");
+        }
+        if (rounds < 1) {
+            throw new IllegalArgumentException("[ERROR] 진행 라운드 수가 1보다 작습니다!");
+        }
         this.cars = cars;
-        this.round = round;
+        this.rounds = rounds;
     }
 
     public Cars getCars() {
         return cars;
     }
 
-    public int getRound() {
-        return round;
-    }
-
-    private boolean isPossibleToStart() {
-        return this.cars.getCar().size() > 1;
+    public int getRounds() {
+        return rounds;
     }
 
     public void playRace() {
-        while (round-- != 0) {
-            if (!isPossibleToStart()) {
-                OutputHandler.printCannotStartGame();
-                break;
-            }
+        while (rounds-- != 0) {
             for (Car car : this.cars.getCar()) {
                 car.move(RandomGenerator.generateRandomNumber());
             }
