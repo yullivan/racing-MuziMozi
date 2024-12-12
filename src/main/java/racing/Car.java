@@ -6,7 +6,14 @@ public class Car {
     private String carName;
     private int position;
 
+    public Car() {
+        this.position = 0;
+    }
+
     public Car(String carName) {
+        if (carName.length() > 10) {
+            throw new IllegalArgumentException("[ERROR] 자동차 이름은 10자 내외로 작성해주세요!");
+        }
         this.carName = carName;
         this.position = 0;
     }
@@ -21,6 +28,10 @@ public class Car {
 
     public void move() {
         this.position++;
+    }
+
+    public boolean isDuplicateWinner(Car other) {
+        return this.getPosition() == other.getPosition();
     }
 
     @Override
