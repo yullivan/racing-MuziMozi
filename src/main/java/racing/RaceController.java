@@ -4,11 +4,15 @@ public class RaceController {
     private Cars cars;
     private int rounds;
 
+    final int MIN_CARS = 2;
+    final int MIN_ROUND = 1;
+    final int RACE_OVER = 0;
+
     public RaceController(Cars cars, int rounds) {
-        if (cars.getCar().size() < 2) {
+        if (cars.getCar().size() < MIN_CARS) {
             throw new IllegalArgumentException("[ERROR] 레이스를 진행하려면 최소 2대 이상의 자동차가 필요합니다!");
         }
-        if (rounds < 1) {
+        if (rounds < MIN_ROUND) {
             throw new IllegalArgumentException("[ERROR] 진행 라운드 수가 1보다 작습니다!");
         }
         this.cars = cars;
@@ -25,7 +29,7 @@ public class RaceController {
 
     public void playRace() {
         int round = 1;
-        while (rounds-- != 0) {
+        while (rounds-- != RACE_OVER) {
             OutputHandler.printRaceRound(round);
             for (Car car : this.cars.getCar()) {
                 car.move(RandomGenerator.generateRandomNumber());

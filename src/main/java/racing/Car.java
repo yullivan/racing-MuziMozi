@@ -6,16 +6,21 @@ public class Car {
     private String carName;
     private int position;
 
+    final int START_POSITION = 0;
+    final int MAX_NAME_LENGTH = 10;
+    final int STOP_NUMBER_1 = 1;
+    final int STOP_NUMBER_2 = 2;
+
     public Car() {
-        this.position = 0;
+        this.position = START_POSITION;
     }
 
     public Car(String carName) {
-        if (carName.length() > 10) {
+        if (carName.length() > MAX_NAME_LENGTH) {
             throw new IllegalArgumentException("[ERROR] 자동차 이름은 10자 내외로 작성해주세요!");
         }
         this.carName = carName;
-        this.position = 0;
+        this.position = START_POSITION;
     }
 
     public String getCarName() {
@@ -27,7 +32,7 @@ public class Car {
     }
 
     private boolean isMove(int randomNumber) {
-        return randomNumber != 1 && randomNumber != 2;
+        return randomNumber != STOP_NUMBER_1 && randomNumber != STOP_NUMBER_2;
     }
 
     public void move(int randomNumber) {
