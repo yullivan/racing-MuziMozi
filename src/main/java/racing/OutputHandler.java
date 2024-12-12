@@ -2,11 +2,19 @@ package racing;
 
 public class OutputHandler {
 
-    public static void printCannotStartGame() {
-        System.out.println("자동차 경주를 시작하려면 최소 2대 이상의 자동차가 필요합니다!");
+    public static void printRaceRound(int round) {
+        System.out.println("(" + round + ")");
     }
 
     public static void printCarsState(Cars cars) {
-        System.out.println(cars);
+        for (Car car : cars.getCar()) {
+            System.out.println(car);
+        }
+    }
+
+    public static void printWinners(Cars cars) {
+        for (Car car : cars.getWinner()) {
+            System.out.println("\uD83C\uDFC6우승자는 " + car.getCarName() + "!");
+        }
     }
 }

@@ -24,6 +24,19 @@ public class InputHandler {
                 System.out.println("잘못된 형식입니다!");
             }
         }
+    }
 
+    public static int getUserRoundInput() {
+        while (true) {
+            try {
+                System.out.println("몇 회 시행할까요?");
+                System.out.print(": ");
+                Scanner scanner = new Scanner(System.in);
+
+                return scanner.nextInt();
+            } catch (IllegalArgumentException e) {
+                System.out.println("잘못된 형식입니다!");
+            }
+        }
     }
 }
