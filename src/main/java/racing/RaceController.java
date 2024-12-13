@@ -27,14 +27,18 @@ public class RaceController {
         return rounds;
     }
 
+    private boolean isRaceOver(int rounds) {
+        return rounds == RACE_OVER;
+    }
+
     public RaceResult playRace() {
         int round = 1;
-        while (rounds-- != RACE_OVER) {
+        while (!isRaceOver(this.rounds--)) {
             OutputHandler.printRaceRound(round);
             for (Car car : this.cars.getCar()) {
                 car.move(RandomGenerator.generateRandomNumber());
             }
-            OutputHandler.printCarsState(cars);
+            OutputHandler.printCarsState(this.cars);
             System.out.println();
             round++;
         }
