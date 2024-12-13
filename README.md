@@ -11,6 +11,8 @@
 - ### Cars - 한 경기에 출전하는 자동차 전부를 처리
     - 필드
       - List<Car> cars
+    - 메서드
+      - void moveCars() -> 전체 자동차들의 움직임 제어
 - ### RaceController - 경기 진행 및 통제
     - 필드
       - Cars cars
