@@ -15,6 +15,12 @@ public class Cars {
         return cars;
     }
 
+    public void moveCars() {
+        for (Car car : this.cars) {
+            car.move(RandomGenerator.generateRandomNumber());
+        }
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

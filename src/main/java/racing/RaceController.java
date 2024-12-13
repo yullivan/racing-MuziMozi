@@ -35,9 +35,7 @@ public class RaceController {
         int round = 1;
         while (!isRaceOver(this.rounds--)) {
             OutputHandler.printRaceRound(round);
-            for (Car car : this.cars.getCar()) {
-                car.move(RandomGenerator.generateRandomNumber());
-            }
+            this.cars.moveCars();
             OutputHandler.printCarsState(this.cars);
             System.out.println();
             round++;
