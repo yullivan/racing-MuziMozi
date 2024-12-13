@@ -27,7 +27,7 @@ public class RaceController {
         return rounds;
     }
 
-    public void playRace() {
+    public RaceResult playRace() {
         int round = 1;
         while (rounds-- != RACE_OVER) {
             OutputHandler.printRaceRound(round);
@@ -38,5 +38,6 @@ public class RaceController {
             System.out.println();
             round++;
         }
+        return new RaceResult(this.getCars());
     }
 }

@@ -7,9 +7,7 @@ public class Application {
         RaceController raceController = new RaceController(InputHandler.getUserCarsInput(), InputHandler.getUserRoundInput());
         System.out.println();
 
-        raceController.playRace();
-
-        RaceResult raceResult = new RaceResult(raceController.getCars());
+        RaceResult raceResult = raceController.playRace();
 
         OutputHandler.printWinners(raceResult);
     }
